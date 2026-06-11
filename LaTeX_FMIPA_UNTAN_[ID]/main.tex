@@ -1,0 +1,56 @@
+\documentclass[12pt, a4paper, oneside]{report}
+\usepackage{skripsi_style}
+
+\begin{document}
+\setstretch{1.5}
+
+% ================= BAGIAN AWAL =================
+\pagenumbering{roman} % Start with roman numerals
+\include{0-bagian-awal/cover}
+\include{0-bagian-awal/judul}
+
+% After title pages, start showing page numbers
+\setcounter{page}{1} % Usually starts from i after title
+\include{0-bagian-awal/pengesahan}
+\include{0-bagian-awal/integritas}
+\include{0-bagian-awal/abstrak}
+\include{0-bagian-awal/abstract}
+\include{0-bagian-awal/prakata}
+\include{0-bagian-awal/persembahan}
+
+% TOC & Lists
+\setstretch{1.0}
+\tableofcontents
+\newpage
+\listoffigures
+\addcontentsline{toc}{chapter}{DAFTAR GAMBAR}
+\newpage
+\listoftables
+\addcontentsline{toc}{chapter}{DAFTAR TABEL}
+\newpage
+\chapter*{DAFTAR LAMPIRAN}
+\addcontentsline{toc}{chapter}{DAFTAR LAMPIRAN}
+\begin{itemize}
+    \item[] Lampiran 1. Kode Program Sistem Keseluruhan \dotfill 12
+    \item[] Lampiran 2. Nama Lampiran \dotfill 12
+\end{itemize}
+\setstretch{1.5}
+
+% ================= BAGIAN ISI =================
+\newpage
+\pagenumbering{arabic} % Switch to arabic numerals
+\setcounter{page}{1}
+\pagestyle{fancy}
+
+\include{1-bagian-isi/bab1}
+\include{1-bagian-isi/bab2}
+\include{1-bagian-isi/bab3}
+\include{1-bagian-isi/bab4}
+\include{1-bagian-isi/bab5}
+
+% ================= BAGIAN AKHIR =================
+\include{2-bagian-akhir/pustaka}
+\include{2-bagian-akhir/lampiran}
+
+\end{document}
+ 

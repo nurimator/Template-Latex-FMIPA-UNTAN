@@ -1,0 +1,55 @@
+\documentclass[12pt, a4paper, oneside]{report}
+\usepackage{thesis_style}
+
+\begin{document}
+\setstretch{1.5}
+
+% ================= FRONT MATTER =================
+\pagenumbering{roman} % Start with roman numerals
+\include{0-front-matter/cover}
+\include{0-front-matter/title}
+
+% After title pages, start showing page numbers
+\setcounter{page}{1} % Usually starts from i after title
+\include{0-front-matter/approval}
+\include{0-front-matter/integrity}
+\include{0-front-matter/abstrak}
+\include{0-front-matter/abstract}
+\include{0-front-matter/preface}
+\include{0-front-matter/dedication}
+
+% TOC & Lists
+\setstretch{1.0}
+\tableofcontents
+\newpage
+\listoffigures
+\addcontentsline{toc}{chapter}{LIST OF FIGURES}
+\newpage
+\listoftables
+\addcontentsline{toc}{chapter}{LIST OF TABLES}
+\newpage
+\chapter*{LIST OF APPENDICES}
+\addcontentsline{toc}{chapter}{LIST OF APPENDICES}
+\begin{itemize}
+    \item[] Appendix 1. Overall System Program Code \dotfill 12
+    \item[] Appendix 2. Appendix Name \dotfill 12
+\end{itemize}
+\setstretch{1.5}
+
+% ================= BODY MATTER =================
+\newpage
+\pagenumbering{arabic} % Switch to arabic numerals
+\setcounter{page}{1}
+\pagestyle{fancy}
+
+\include{1-body-matter/chapter1}
+\include{1-body-matter/chapter2}
+\include{1-body-matter/chapter3}
+\include{1-body-matter/chapter4}
+\include{1-body-matter/chapter5}
+
+% ================= BACK MATTER =================
+\include{2-back-matter/bibliography}
+\include{2-back-matter/appendices}
+
+\end{document}
