@@ -5,14 +5,14 @@
 \setstretch{1.5}
 
 % ================= BAGIAN AWAL =================
-\pagenumbering{roman} % Start with roman numerals
+\pagestyle{empty} % No page numbers for cover and initial pages
 \include{0-bagian-awal/cover}
 \include{0-bagian-awal/judul}
-
-% After title pages, start showing page numbers
-\setcounter{page}{1} % Usually starts from i after title
 \include{0-bagian-awal/pengesahan}
 \include{0-bagian-awal/integritas}
+
+\pagenumbering{roman} % Start Roman numerals
+\pagestyle{plain}    % Roman numerals always at bottom center
 \include{0-bagian-awal/abstrak}
 \include{0-bagian-awal/abstract}
 \include{0-bagian-awal/prakata}
@@ -28,19 +28,15 @@
 \listoftables
 \addcontentsline{toc}{chapter}{DAFTAR TABEL}
 \newpage
-\chapter*{DAFTAR LAMPIRAN}
+\listofappendix
 \addcontentsline{toc}{chapter}{DAFTAR LAMPIRAN}
-\begin{itemize}
-    \item[] Lampiran 1. Kode Program Sistem Keseluruhan \dotfill 12
-    \item[] Lampiran 2. Nama Lampiran \dotfill 12
-\end{itemize}
 \setstretch{1.5}
 
 % ================= BAGIAN ISI =================
-\newpage
+\clearpage
 \pagenumbering{arabic} % Switch to arabic numerals
 \setcounter{page}{1}
-\pagestyle{fancy}
+\pagestyle{fancy}      % Arabic numerals follow fancy style (Top Right, Bottom Center on chapter starts)
 
 \include{1-bagian-isi/bab1}
 \include{1-bagian-isi/bab2}

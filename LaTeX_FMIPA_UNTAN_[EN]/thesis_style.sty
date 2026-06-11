@@ -11,7 +11,7 @@
 \usepackage{indentfirst}
 \setlength{\parindent}{1cm} % Set paragraph indentation to 1 cm
 \usepackage[labelfont=bf, textfont=md, labelsep=space, format=hang]{caption}
-\usepackage[textfont=md, labelsep=space, format=hang]{caption}
+\usepackage{subcaption}
 \captionsetup[figure]{labelfont=bf} % Figure uses Bold, 10pt spacing
 \captionsetup[table]{labelfont=md, skip=0pt}  % Table not Bold, 10pt spacing
 
@@ -45,12 +45,36 @@
 \setlength{\cftaftertoctitleskip}{0pt}
 
 \renewcommand{\cftloftitlefont}{\hspace*{\fill}\normalfont\large\bfseries}
-\renewcommand{\cftafterloftitle}{\hspace*{\fill}\par\vspace{20pt}}
+\renewcommand{\cftafterloftitle}{\hspace*{\fill}\par\vspace{20pt}\hfill Page\par}
 \setlength{\cftafterloftitleskip}{0pt}
+\renewcommand{\cftfigpresnum}{Figure }
+\setlength{\cftfignumwidth}{4.8em}
+\setlength{\cftbeforefigskip}{0pt}
 
 \renewcommand{\cftlottitlefont}{\hspace*{\fill}\normalfont\large\bfseries}
-\renewcommand{\cftafterlottitle}{\hspace*{\fill}\par\vspace{20pt}}
+\renewcommand{\cftafterlottitle}{\hspace*{\fill}\par\vspace{20pt}\hfill Page\par}
 \setlength{\cftafterlottitleskip}{0pt}
+\renewcommand{\cfttabpresnum}{Table }
+\setlength{\cfttabnumwidth}{4.8em}
+\setlength{\cftbeforetabskip}{0pt}
+
+% ================= APPENDIX LIST STYLING =================
+\newcommand{\listappendixname}{LIST OF APPENDICES}
+\newlistof{appendix}{apx}{\listappendixname}
+\renewcommand{\cftapxtitlefont}{\hspace*{\fill}\normalfont\large\bfseries}
+\renewcommand{\cftafterapxtitle}{\hspace*{\fill}\par\vspace{20pt}\hfill Page\par}
+\setlength{\cftafterapxtitleskip}{0pt}
+\setlength{\cftbeforeappendixskip}{0pt}
+\renewcommand{\cftappendixdotsep}{\cftdotsep}
+\setlength{\cftappendixnumwidth}{6em}
+
+% Command to add appendix items
+\newcounter{appendixcount}
+\newcommand{\appendixitem}[1]{%
+    \stepcounter{appendixcount}%
+    \noindent Appendix \theappendixcount. #1\par
+    \addcontentsline{apx}{appendix}{Appendix \theappendixcount. #1}%
+}
 
 % ================= GEOMETRY =================
 \geometry{top=4cm, bottom=3cm, left=4cm, right=3cm}
@@ -58,25 +82,26 @@
 % ================= STYLING =================
 
 % Formatting chapters to look like "CHAPTER I"
+\renewcommand{\thechapter}{\Roman{chapter}}
 \titleformat{\chapter}[display]
-  {\normalfont\large\bfseries\centering}{\chaptertitlename\ \Roman{chapter}}{-4pt}{\large}
+  {\normalfont\large\bfseries\centering}{\chaptertitlename\ \thechapter}{-4pt}{\large}
 \titlespacing*{\chapter}{0pt}{-20pt}{20pt}
 
 \titleformat{\section}
-  {\normalfont\normalsize\bfseries}{\thesection}{1em}{}
+  {\normalfont\normalsize\bfseries}{\arabic{chapter}.\arabic{section}}{1em}{}
 \titlespacing*{\section}{0pt}{2ex plus 1ex minus .2ex}{0.1ex}
 
 \titleformat{\subsection}
-  {\normalfont\normalsize}{\thesubsection}{1em}{\uline}
+  {\normalfont\normalsize}{\arabic{chapter}.\arabic{section}.\arabic{subsection}}{1em}{\uline}
 \titlespacing*{\subsection}{0pt}{1.5ex plus 1ex minus .2ex}{0.1ex}
 
 \titleformat{\subsubsection}
-  {\normalfont\normalsize}{\thesubsubsection}{1em}{\uline}
+  {\normalfont\normalsize}{\arabic{chapter}.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}{1em}{\uline}
 \titlespacing*{\subsubsection}{0pt}{1.5ex plus 1ex minus .2ex}{0.1ex}
 
 
 % ================= BIBLIOGRAPHY STYLING =================
-\usepackage[backend=biber, style=authoryear, sorting=nyt, maxcitenames=2, maxbibnames=99, giveninits=true, dashed=false]{biblatex}
+\usepackage[backend=biber, style=authoryear, sorting=nyt, maxcitenames=2, maxbibnames=99, giveninits=true, dashed=false, doi=false]{biblatex}
 \addbibresource{references.bib}
 
 % Set 1.0 spacing and 1cm hanging indentation
