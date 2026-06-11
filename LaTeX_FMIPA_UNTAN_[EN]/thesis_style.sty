@@ -82,21 +82,20 @@
 % ================= STYLING =================
 
 % Formatting chapters to look like "CHAPTER I"
-\renewcommand{\thechapter}{\Roman{chapter}}
 \titleformat{\chapter}[display]
-  {\normalfont\large\bfseries\centering}{\chaptertitlename\ \thechapter}{-4pt}{\large}
+  {\normalfont\large\bfseries\centering}{\chaptertitlename\ \Roman{chapter}}{-4pt}{\large}
 \titlespacing*{\chapter}{0pt}{-20pt}{20pt}
 
 \titleformat{\section}
-  {\normalfont\normalsize\bfseries}{\arabic{chapter}.\arabic{section}}{1em}{}
+  {\normalfont\normalsize\bfseries}{\thesection}{1em}{}
 \titlespacing*{\section}{0pt}{2ex plus 1ex minus .2ex}{0.1ex}
 
 \titleformat{\subsection}
-  {\normalfont\normalsize}{\arabic{chapter}.\arabic{section}.\arabic{subsection}}{1em}{\uline}
+  {\normalfont\normalsize}{\thesubsection}{1em}{\uline}
 \titlespacing*{\subsection}{0pt}{1.5ex plus 1ex minus .2ex}{0.1ex}
 
 \titleformat{\subsubsection}
-  {\normalfont\normalsize}{\arabic{chapter}.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}{1em}{\uline}
+  {\normalfont\normalsize}{\thesubsubsection}{1em}{\uline}
 \titlespacing*{\subsubsection}{0pt}{1.5ex plus 1ex minus .2ex}{0.1ex}
 
 
@@ -144,15 +143,17 @@
 
 
 % Header and Footer Styling
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[R]{\thepage} % Page number on Top Right for regular pages
-\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{15pt}
+\fancypagestyle{fancy}{
+  \fancyhf{}
+  \fancyhead[R]{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+}
 
 % Redefining "plain" style for chapter first pages
 \fancypagestyle{plain}{
   \fancyhf{}
-  \fancyfoot[C]{\thepage} % Page number on Bottom Center for chapter starts
+  \fancyfoot[C]{\thepage}
   \renewcommand{\headrulewidth}{0pt}
 }
 
