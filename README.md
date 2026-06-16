@@ -1,6 +1,8 @@
 # Template LaTeX FMIPA UNTAN
 
-Template LaTeX **unofficial** ini dirancang sebagai alternatif penulisan tugas akhir (Skripsi) di Fakultas Matematika dan Ilmu Pengetahuan Alam (FMIPA) Universitas Tanjungpura, yang merupakan hasil konversi dari acuan format Template Microsoft Word. Tersedia dalam dua versi: Bahasa Indonesia (`[ID]`) dan Bahasa Inggris (`[EN]`).
+Halo! Template LaTeX **unofficial** ini saya buat sekadar untuk membantu teman-teman mahasiswa FMIPA UNTAN dalam menyusun tugas akhir (Skripsi) menggunakan LaTeX. Perlu diketahui bahwa saya hanya mahasiswa biasa yang mencoba mengonversi format dari Template Microsoft Word ke LaTeX, dan saya **bukan** bagian dari tenaga pendidik atau staf resmi kampus. (Selengkapnya silakan baca bagian [Disclaimer](#disclaimer-penyangkalan)).
+
+Template ini tersedia dalam dua versi: Bahasa Indonesia (`[ID]`) dan Bahasa Inggris (`[EN]`). Semoga bermanfaat! 
 
 ## Persyaratan (Requirements)
 
@@ -159,9 +161,9 @@ Buka **Options** -> **Configure TeXstudio**:
 
 ## Disclaimer (Penyangkalan)
 
-- Template ini adalah **unofficial** (bukan merupakan rilisan resmi) dan merupakan hasil konversi mandiri dari acuan template Microsoft Word.
-- Template ini mungkin tidak mutakhir; aturan penulisan dan format template dapat berubah sewaktu-waktu sesuai kebijakan fakultas.
-- Pengguna bertanggung jawab penuh untuk memeriksa kembali kesesuaian hasil akhir dengan aturan template terbaru yang berlaku.
-- Pihak yang melakukan konversi template ini tidak bertanggung jawab (*not liable*) atas kesalahan format diakibatkan oleh penggunaan template ini, maupun yang diakibatkan oleh kelalaian atau ketidaktahuan dalam cara penggunaan template ini.
+- Template ini adalah **unofficial** (bukan rilisan resmi) dan hanya merupakan hasil konversi mandiri yang saya lakukan dari acuan template Microsoft Word.
+- Sebagai sesama mahasiswa, saya berusaha semaksimal mungkin agar formatnya sesuai, namun template ini mungkin tidak selalu mutakhir karena aturan bisa berubah sewaktu-waktu.
+- Pengguna bertanggung jawab penuh untuk memeriksa kembali kesesuaian hasil akhir dengan aturan terbaru yang berlaku di program studi masing-masing.
+- Saya selaku yang melakukan konversi tidak bertanggung jawab atas kesalahan format atau kendala teknis (yang dapat menyebabkan kerugian waktu) yang muncul akibat penggunaan template ini.
 
-**Kontribusi:** Silakan lakukan pull request jika ingin memperbaiki format sesuai perkembangan aturan terbaru.
+**Kontribusi:** Jika Anda menemukan kesalahan, silakan buka **Issue**. Selain itu, jika Anda ingin memperbaiki sendiri atau memperbarui format sesuai aturan terbaru, silakan lakukan **pull request**. Bantuan Anda sangat berarti bagi teman-teman mahasiswa lainnya!
