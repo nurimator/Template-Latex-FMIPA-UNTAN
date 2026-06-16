@@ -1,8 +1,11 @@
 # Template LaTeX FMIPA UNTAN
 
+[![Download ZIP (Bahasa Indonesia)](https://img.shields.io/badge/Download-Versi%20Indonesia-blue?style=for-the-badge&logo=github)](https://github.com/nurimator/Template-Latex-FMIPA-UNTAN/releases/download/v1.0.0/LaTeX_FMIPA_UNTAN_ID.zip)
+[![Download ZIP (English Version)](https://img.shields.io/badge/Download-English%20Version-green?style=for-the-badge&logo=github)](https://github.com/nurimator/Template-Latex-FMIPA-UNTAN/releases/download/v1.0.0/LaTeX_FMIPA_UNTAN_EN.zip)
+
 Halo! Template LaTeX **unofficial** ini saya buat sekadar untuk membantu teman-teman mahasiswa FMIPA UNTAN dalam menyusun tugas akhir (Skripsi) menggunakan LaTeX. Perlu diketahui bahwa saya hanya mahasiswa biasa yang mencoba mengonversi format dari Template Microsoft Word ke LaTeX, dan saya **bukan** bagian dari tenaga pendidik atau staf resmi kampus. (Selengkapnya silakan baca bagian [Disclaimer](#disclaimer-penafian)).
 
-Template ini tersedia dalam dua versi: Bahasa Indonesia (`[ID]`) dan Bahasa Inggris (`[EN]`). Semoga bermanfaat! 
+Template ini tersedia dalam dua versi: Bahasa Indonesia (`ID`) dan Bahasa Inggris (`EN`). Semoga bermanfaat! 
 
 ## Persyaratan (Requirements)
 
@@ -14,7 +17,7 @@ Untuk menggunakan template ini, Anda harus menggunakan:
 
 ```text
 .
-├── LaTeX_FMIPA_UNTAN_[ID]/       # Versi Bahasa Indonesia (Utama)
+├── LaTeX_FMIPA_UNTAN_ID/         # Versi Bahasa Indonesia (Utama)
 │   ├── main.tex                  # File utama (ID)
 │   ├── skripsi_style.sty         # Style & Packages (ID)
 │   ├── pustaka.bib               # Database bibliografi (ID)
@@ -39,8 +42,8 @@ Untuk menggunakan template ini, Anda harus menggunakan:
 │   └── assets/                   # Folder Aset
 │       ├── images/               # Gambar (JPG, PNG)
 │       └── pdfs/                 # Logo & Dokumen PDF
-├── LaTeX_FMIPA_UNTAN_[EN]/       # Versi Bahasa Inggris
-│   └── (Struktur folder sama dengan versi [ID], hanya berbeda bahasa)
+├── LaTeX_FMIPA_UNTAN_EN/         # Versi Bahasa Inggris
+│   └── (Struktur folder sama dengan versi ID, hanya berbeda bahasa)
 └── README.md
 ```
 
@@ -144,15 +147,40 @@ Jika Anda tidak ingin menginstal LaTeX secara lokal, Anda bisa mengunggah folder
 3. Pada bagian **Settings**, ubah **Compiler** menjadi `XeLaTeX`.
 4. Klik **Recompile**.
 
-### 2. Menggunakan Editor Lokal (VS Code / TeXstudio)
+*Catatan: Overleaf memiliki batasan waktu kompilasi (timeout), terutama untuk akun gratis. Jika proyek Anda sudah lumayan besar (banyak gambar atau bab), Overleaf mungkin akan menolak untuk melakukan kompilasi. Dalam kondisi ini, sangat disarankan untuk melakukan kompilasi secara lokal (VS Code/TeXstudio).*
 
-#### VS Code (LaTeX Workshop)
-Gunakan ekstensi **LaTeX Workshop**. Cara termudah adalah menggunakan **tectonic.exe** dan **biber.exe**. Pastikan:
-- Versi Tectonic dan Biber kompatibel satu sama lain.
-- Path kedua executable tersebut sudah terdaftar dengan benar di `settings.json` VS Code Anda.
-- Gunakan resep (recipe) yang menjalankan Tectonic -> Biber -> Tectonic.
+### 2. Menggunakan VS Code (LaTeX Workshop)
+Gunakan ekstensi **LaTeX Workshop**. Cara termudah adalah menggunakan **tectonic.exe**. Pastikan path executable tersebut sudah terdaftar dengan benar di `settings.json` VS Code Anda. Berikut adalah contoh konfigurasinya:
 
-### TeXstudio
+```json
+{
+    "latex-workshop.latex.autoBuild.run": "never",
+    "latex-workshop.latex.tools": [
+        {
+            "name": "tectonic",
+            "command": "C:/path/to/your/tectonic.exe",
+            "args": [
+                "--synctex",
+                "%DOC%.tex"
+            ],
+            "env": {}
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "tectonic",
+            "tools": [
+                "tectonic"
+            ]
+        }
+    ]
+}
+```
+*Catatan:*
+- *Sesuaikan path `"command"` dengan lokasi instalasi Tectonic di komputer Anda.*
+- *Pastikan `biber.exe` diletakkan di folder yang sama dengan `tectonic.exe` dan versinya harus kompatibel.*
+
+### 3. Menggunakan TeXstudio
 Buka **Options** -> **Configure TeXstudio**:
 - **Build**: Default Compiler ganti ke `XeLaTeX`.
 - **Build**: Default Bibliography Tool ganti ke `Biber`.
