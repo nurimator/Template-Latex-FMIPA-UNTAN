@@ -9,37 +9,60 @@
 \usepackage{booktabs}
 \usepackage{titlesec}
 \usepackage{indentfirst}
-\setlength{\parindent}{1cm} % Set paragraph indentation to 1 cm
+\setlength{\parindent}{1cm} % Paragraph indentation is set to 1 cm
 \usepackage[labelfont=bf, textfont=md, labelsep=space, format=hang]{caption}
 \usepackage{subcaption}
-\captionsetup[figure]{labelfont=bf} % Figure uses Bold, 10pt spacing
-\captionsetup[table]{labelfont=md, skip=0pt}  % Table not Bold, 10pt spacing
+\captionsetup[figure]{labelfont=bf} % Figures use Bold, 10pt spacing
+\captionsetup[table]{labelfont=md, skip=0pt}  % Tables use non-Bold, 10pt spacing
 
-% Prevent word hyphenation and allow space stretching
+% Prevention of word hyphenation and allowance for space stretching
 \hyphenpenalty=10000
 \exhyphenpenalty=10000
 \sloppy
 
 \usepackage{amsmath}
 \usepackage{fancyhdr}
-\usepackage[normalem]{ulem} % For better underline
-\usepackage{enumitem} % To set list spacing
+\usepackage[normalem]{ulem} % Use of better underline
+\usepackage{enumitem} % Adjustment of list spacing
 \usepackage{tocloft}
-\usepackage{etoolbox} % For environment modification
+\usepackage{etoolbox} % Environment modification
 
-% Remove extra spacing on list to follow 1.5 spacing
+% Removal of extra spacing on list for 1.5 spacing
 \setlist{nosep, leftmargin=*} 
 
 % ================= TOC STYLING =================
-\renewcommand{\cftchapfont}{\normalfont}    % Chapter title not bold
-\renewcommand{\cftchappagefont}{\normalfont}% Chapter page number not bold
+\setcounter{tocdepth}{2}                    % Limitation to 3 levels: Chapter, Section, Subsection
+\renewcommand{\cftchapfont}{\normalfont}    % Chapter title is not bold
+\renewcommand{\cftchappagefont}{\normalfont}% Chapter page number is not bold
 \renewcommand{\cftchapdotsep}{\cftdotsep}   % Dots for chapters
-\renewcommand{\cftchappresnum}{CHAPTER\ }       % Add CHAPTER word
-\setlength{\cftchapnumwidth}{6em}           % Width of chapter number space
 \renewcommand{\cftdotsep}{1}                % Density of dots
 \setlength{\cftbeforechapskip}{0pt}         % Uniform vertical spacing (0pt)
 
-% Centering and bolding List Titles (TOC, LOF, LOT)
+% --- SECTION & SUBSECTION: FIXED WIDTH (ALIGNED) ---
+\setlength{\cftsecnumwidth}{2.2em}
+\setlength{\cftsubsecnumwidth}{2.6em}
+
+% --- CHAPTER: FLUID (NO FIXED WIDTH) ---
+% Chapter titles follow the number with a normal space (no fixed width)
+\makeatletter
+\renewcommand{\l@chapter}[2]{%
+  \ifnum \c@tocdepth >\m@ne
+    \addpenalty{-\@highpenalty}%
+    \vskip \cftbeforechapskip
+    {\leftskip \cftchapindent\relax
+     \rightskip \@tocrmarg
+     \parfillskip -\rightskip
+     \parindent \cftchapindent\relax\@afterindenttrue
+     \interlinepenalty\@M
+     \leavevmode
+     \let\@tempa\numberline
+     \renewcommand{\numberline}[1]{\chaptername\ ##1\ }% Usage of normal space
+     {#1}\nobreak\cftchapfillnum{#2}}%
+  \fi}
+\makeatother
+% ---------------------------------------
+
+% Centering and bolding of List Titles (TOC, LOF, LOT)
 \renewcommand{\cfttoctitlefont}{\hspace*{\fill}\normalfont\large\bfseries}
 \renewcommand{\cftaftertoctitle}{\hspace*{\fill}\par\vspace{20pt}\hfill Page\par}
 \setlength{\cftaftertoctitleskip}{0pt}
@@ -48,14 +71,14 @@
 \renewcommand{\cftafterloftitle}{\hspace*{\fill}\par\vspace{20pt}\hfill Page\par}
 \setlength{\cftafterloftitleskip}{0pt}
 \renewcommand{\cftfigpresnum}{Figure }
-\setlength{\cftfignumwidth}{4.8em}
+\setlength{\cftfignumwidth}{4.6em}
 \setlength{\cftbeforefigskip}{0pt}
 
 \renewcommand{\cftlottitlefont}{\hspace*{\fill}\normalfont\large\bfseries}
 \renewcommand{\cftafterlottitle}{\hspace*{\fill}\par\vspace{20pt}\hfill Page\par}
 \setlength{\cftafterlottitleskip}{0pt}
 \renewcommand{\cfttabpresnum}{Table }
-\setlength{\cfttabnumwidth}{4.8em}
+\setlength{\cfttabnumwidth}{4.2em}
 \setlength{\cftbeforetabskip}{0pt}
 
 % ================= APPENDIX LIST STYLING =================
@@ -68,7 +91,7 @@
 \renewcommand{\cftappendixdotsep}{\cftdotsep}
 \setlength{\cftappendixnumwidth}{6em}
 
-% Command to add appendix items
+% Command for adding appendix items
 \newcounter{appendixcount}
 \newcommand{\appendixitem}[1]{%
     \stepcounter{appendixcount}%
@@ -81,10 +104,30 @@
 
 % ================= STYLING =================
 
-% Formatting chapters to look like "CHAPTER I"
+% ================= RESET BASIC CHAPTER NUMBERING TO ROMAN =================
+% Automatic reading of Roman numerals by the Table of Contents (TOC)
+\renewcommand{\thechapter}{\Roman{chapter}} 
+
+% Usage of Arabic chapter prefixes for Figure, Table, and Equation numbers (1.1, 1.2)
+% even though the Chapter number itself is Roman.
+\renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
+\renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
+\renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}}
+
+% (Optional) Section numbers remaining in Arabic format (1.1, 1.1.1)
+\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+% ================= CHAPTER TITLE STYLING =================
+% Usage of original number (\thechapter) for numbered chapters (\chapter)
 \titleformat{\chapter}[display]
-  {\normalfont\large\bfseries\centering}{\chaptertitlename\ \Roman{chapter}}{-4pt}{\large}
+  {\normalfont\large\bfseries\centering}{\chaptertitlename\ \thechapter}{-4pt}{\large}
 \titlespacing*{\chapter}{0pt}{-20pt}{20pt}
+
+% Special settings for unnumbered chapters (\chapter*)
+% Such as TABLE OF CONTENTS, LIST OF FIGURES, REFERENCES, etc.
+\titleformat{name=\chapter,numberless}[display]
+  {\normalfont\large\bfseries\centering}{}{-4pt}{\large}
+\titlespacing*{name=\chapter,numberless}{0pt}{-20pt}{20pt}
 
 \titleformat{\section}
   {\normalfont\normalsize\bfseries}{\thesection}{1em}{}
@@ -103,36 +146,36 @@
 \usepackage[backend=biber, style=authoryear, sorting=nyt, maxcitenames=2, maxbibnames=99, giveninits=true, dashed=false, doi=false, uniquename=false, uniquelist=false]{biblatex}
 \addbibresource{references.bib}
 
-% Set 1.0 spacing and 1cm hanging indentation
+% Settings for 1.0 spacing and 1cm hanging indentation
 \setlength{\bibhang}{1cm}
 \renewcommand{\bibfont}{\setstretch{1.0}}
 \setlength{\bibnamesep}{1ex}
 
-% CUSTOM STYLE: Change separator between elements to comma
+% CUSTOM STYLE: Element separator is changed to a comma
 \renewcommand*{\newunitpunct}{\addcomma\space}
 
-% CUSTOM STYLE: Remove parentheses on year
+% CUSTOM STYLE: Removal of parentheses from the year
 \renewbibmacro*{date+extradate}{%
   \iffieldundef{labelyear}
     {}
     {\printtext{\printfield{labelyear}\printfield{extradate}}}}
 
-% CUSTOM STYLE: Remove "In:" word for journals
+% CUSTOM STYLE: Removal of "In:" for journals
 \renewbibmacro{in:}{}
 
-% CUSTOM STYLE: Set Volume, Number, and Page order
+% CUSTOM STYLE: Volume, Number, and Page order settings
 \DeclareFieldFormat[article]{volume}{#1}
 \DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
 \DeclareFieldFormat[article]{pages}{#1}
 
-% Set References title to use Chapter* style
+% References title is set to use the Chapter* style
 \defbibheading{bibliography}[\bibname]{%
   \chapter*{REFERENCES}%
   \markboth{REFERENCES}{REFERENCES}%
   \addcontentsline{toc}{chapter}{REFERENCES}%
 }
 
-% Translating labels to English
+% Label translations to English
 \renewcommand{\contentsname}{TABLE OF CONTENTS}
 \renewcommand{\listfigurename}{LIST OF FIGURES}
 \renewcommand{\listtablename}{LIST OF TABLES}
@@ -150,7 +193,7 @@
   \renewcommand{\headrulewidth}{0pt}
 }
 
-% Redefining "plain" style for chapter first pages
+% Redefinition of "plain" style for chapter first pages
 \fancypagestyle{plain}{
   \fancyhf{}
   \fancyfoot[C]{\thepage}
