@@ -1,6 +1,6 @@
 # Template LaTeX FMIPA UNTAN
 
-Halo! Template LaTeX **unofficial** ini saya buat sekadar untuk membantu teman-teman mahasiswa FMIPA UNTAN dalam menyusun tugas akhir (Skripsi) menggunakan LaTeX. Perlu diketahui bahwa saya hanya mahasiswa biasa yang mencoba mengonversi format dari Template Microsoft Word ke LaTeX, dan saya **bukan** bagian dari tenaga pendidik atau staf resmi kampus. (Selengkapnya silakan baca bagian [Disclaimer](#disclaimer-penyangkalan)).
+Halo! Template LaTeX **unofficial** ini saya buat sekadar untuk membantu teman-teman mahasiswa FMIPA UNTAN dalam menyusun tugas akhir (Skripsi) menggunakan LaTeX. Perlu diketahui bahwa saya hanya mahasiswa biasa yang mencoba mengonversi format dari Template Microsoft Word ke LaTeX, dan saya **bukan** bagian dari tenaga pendidik atau staf resmi kampus. (Selengkapnya silakan baca bagian [Disclaimer](#disclaimer-penafian)).
 
 Template ini tersedia dalam dua versi: Bahasa Indonesia (`[ID]`) dan Bahasa Inggris (`[EN]`). Semoga bermanfaat! 
 
@@ -8,7 +8,7 @@ Template ini tersedia dalam dua versi: Bahasa Indonesia (`[ID]`) dan Bahasa Ingg
 
 Untuk menggunakan template ini, Anda harus menggunakan:
 - **Compiler:** `XeLaTeX` (Wajib, karena menggunakan paket `fontspec` untuk font Times New Roman).
-- **Bibliography Processor:** `Biber` (Bukan BibTeX).
+- **Bibliography Processor:** `Biber`.
 
 ## Struktur Proyek
 
@@ -114,7 +114,7 @@ Rujuk dengan: `Tabel \ref{tab:tabel1}`.
 
 ### 5. Sitasi dan Daftar Pustaka
 Template ini menggunakan `biblatex` dengan gaya `authoryear`.
-- **Menambahkan referensi:** Edit file `pustaka.bib` (ID) atau `references.bib` (EN).
+- **Menambahkan referensi:** Edit file `pustaka.bib` (ID) atau `references.bib` (EN). Anda bisa mengekspor referensi dari Mendeley atau Zotero dalam format BibTeX (.bib).
 - **Cara Sitasi:**
     - `\textcite{key}` -> Penulis (Tahun)
     - `\parentcite{key}` -> (Penulis, Tahun)
@@ -159,7 +159,7 @@ Buka **Options** -> **Configure TeXstudio**:
 
 ---
 
-## Disclaimer (Penyangkalan)
+## Disclaimer (Penafian)
 
 - Template ini adalah **unofficial** (bukan rilisan resmi) dan hanya merupakan hasil konversi mandiri yang saya lakukan dari acuan template Microsoft Word.
 - Sebagai sesama mahasiswa, saya berusaha semaksimal mungkin agar formatnya sesuai, namun template ini mungkin tidak selalu mutakhir karena aturan bisa berubah sewaktu-waktu.
