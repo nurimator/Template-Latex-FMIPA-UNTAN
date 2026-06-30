@@ -2,5 +2,34 @@
 \chapter*{APPENDICES}
 \addcontentsline{toc}{chapter}{APPENDICES}
 
-\appendixitem{Overall System Program Code}
-\appendixitem{Appendix Name}
+\appendixitem{Standard Deviation Calculation}
+\begin{align*}
+\bar{x} &= \frac{1}{N} \sum_{i=1}^{N} x_i \\
+&= \frac{10 + 12 + 15 + 18 + 20}{5} = \frac{75}{5} = 15 \\
+s &= \sqrt{\frac{\sum_{i=1}^{N} (x_i - \bar{x})^2}{N-1}} \\
+&= \sqrt{\frac{(10-15)^2 + (12-15)^2 + (15-15)^2 + (18-15)^2 + (20-15)^2}{5-1}} \\
+&= \sqrt{\frac{25 + 9 + 0 + 9 + 25}{4}} \\
+&= \sqrt{\frac{68}{4}} = \sqrt{17} \approx 4.123
+\end{align*}
+
+\appendixitem{Linear Regression Calculation ($m$ and $c$)}
+
+$N = 5, \quad \sum x = 16.1, \quad \sum y = 30.3, \quad \sum x^2 = 61.59, \quad \sum xy = 116.6$
+
+\noindent
+\begin{minipage}[t]{0.55\textwidth}
+\begin{align*}
+m &= \frac{N \sum xy - \sum x \sum y}{N \sum x^2 - (\sum x)^2} \\
+&= \frac{5(116.6) - (16.1)(30.3)}{5(61.59) - (16.1)^2} \\
+&= \frac{583 - 487.83}{307.95 - 259.21} \\
+&= \frac{95.17}{48.74} \approx 1.953
+\end{align*}
+\end{minipage}%
+\begin{minipage}[t]{0.45\textwidth}
+\begin{align*}
+c &= \frac{\sum y - m \sum x}{N} \\
+&= \frac{30.3 - (1.953)(16.1)}{5} \\
+&= \frac{30.3 - 31.443}{5} \\
+&= \frac{-1.143}{5} \approx -0.229
+\end{align*}
+\end{minipage}
