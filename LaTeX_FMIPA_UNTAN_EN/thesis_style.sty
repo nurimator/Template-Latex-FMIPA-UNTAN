@@ -35,6 +35,7 @@
 \renewcommand{\cftchapfont}{\normalfont}    % Chapter title is not bold
 \renewcommand{\cftchappagefont}{\normalfont}% Chapter page number is not bold
 \renewcommand{\cftchapdotsep}{\cftdotsep}   % Dots for chapters
+\renewcommand{\cftchapleader}{\normalfont\cftdotfill{\cftchapdotsep}} % Normal dots for chapters
 \renewcommand{\cftdotsep}{1}                % Density of dots
 \setlength{\cftbeforechapskip}{0.5\baselineskip} % 1.5 spacing gap before new chapter
 
@@ -57,7 +58,7 @@
      \leavevmode
      \let\@tempa\numberline
      \renewcommand{\numberline}[1]{\chaptername\ ##1\ }% Usage of normal space
-     {#1}\nobreak\cftchapfillnum{#2}}%
+     {#1}\nobreak{\normalfont\cftchapfillnum{#2}}}%
   \fi}
 \makeatother
 % ---------------------------------------

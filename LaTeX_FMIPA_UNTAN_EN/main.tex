@@ -9,14 +9,17 @@
 \setstretch{1.5}
 
 % ================= FRONT MATTER =================
+\setstretch{1.0} % Single spacing for cover and title
 \pagestyle{empty} % No page numbers for cover and initial pages
 \include{0-front-matter/cover}
+\pagenumbering{roman} % Start Roman numerals
+\pagestyle{plain}    % Roman numerals always at bottom center
 \include{0-front-matter/title}
+\setstretch{1.5} % Revert to 1.5 spacing
+\setcounter{page}{2}
 \include{0-front-matter/approval}
 \include{0-front-matter/integrity}
 
-\pagenumbering{roman} % Start Roman numerals
-\pagestyle{plain}    % Roman numerals always at bottom center
 \include{0-front-matter/abstrak}
 \include{0-front-matter/abstract}
 \include{0-front-matter/preface}
@@ -24,6 +27,8 @@
 
 % TOC & Lists
 \setstretch{1.0}
+\clearpage
+\addcontentsline{toc}{chapter}{TABLE OF CONTENTS}
 \tableofcontents
 \newpage
 \listoffigures

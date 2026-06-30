@@ -35,6 +35,7 @@
 \renewcommand{\cftchapfont}{\normalfont}    % Judul bab tidak bold
 \renewcommand{\cftchappagefont}{\normalfont}% Nomor halaman bab tidak bold
 \renewcommand{\cftchapdotsep}{\cftdotsep}   % Titik-titik untuk bab
+\renewcommand{\cftchapleader}{\normalfont\cftdotfill{\cftchapdotsep}} % Titik-titik bab tidak bold
 \renewcommand{\cftdotsep}{1}                % Kerapatan titik-titik
 \setlength{\cftbeforechapskip}{0.5\baselineskip} % Jarak 1.5 spasi sebelum bab baru
 
@@ -57,7 +58,7 @@
      \leavevmode
      \let\@tempa\numberline
      \renewcommand{\numberline}[1]{\chaptername\ ##1\ }% Penggunaan spasi biasa
-     {#1}\nobreak\cftchapfillnum{#2}}%
+     {#1}\nobreak{\normalfont\cftchapfillnum{#2}}}%
   \fi}
 \makeatother
 % --------------------------------------
