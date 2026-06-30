@@ -141,11 +141,16 @@ Data seperti Judul, Nama, dan NIM dapat diubah langsung pada file di folder `0-b
 ## Cara Kompilasi
 
 ### 1. Menggunakan Overleaf (Paling Mudah)
-Jika Anda tidak ingin menginstal LaTeX secara lokal, Anda bisa mengunggah folder template ini ke Overleaf. **Penting:** Anda harus mengubah engine compiler agar font *Times New Roman* dapat terbaca:
-1. Buka Proyek di Overleaf.
-2. Klik tombol **Menu** di pojok kiri atas.
-3. Pada bagian **Settings**, ubah **Compiler** menjadi `XeLaTeX`.
-4. Klik **Recompile**.
+Jika Anda tidak ingin menginstal LaTeX secara lokal, Anda bisa menggunakan layanan Overleaf:
+1. Lakukan registrasi di [Overleaf.com](https://www.overleaf.com/) kemudian login.
+2. Download template versi `.zip` melalui tautan di bagian atas halaman ini, atau _clone_ project ini kemudian _compress_ folder yang ingin digunakan ke dalam bentuk `.zip`.
+3. Buat project baru pada Overleaf dengan mengeklik tombol **"New Project"**, kemudian pilih **"Upload Project"**.
+4. Upload file `.zip` tersebut pada halaman yang disediakan.
+
+**Penting:** Setelah proyek terbuka, Anda harus mengubah engine compiler agar font *Times New Roman* dapat terbaca dengan benar:
+1. Klik tombol **Menu** di pojok kiri atas Overleaf.
+2. Pada bagian **Settings**, ubah **Compiler** menjadi `XeLaTeX`.
+3. Klik **Recompile**.
 
 *Catatan: Overleaf memiliki batasan waktu kompilasi (timeout), terutama untuk akun gratis. Jika proyek Anda sudah lumayan besar (banyak gambar atau bab), Overleaf mungkin akan menolak untuk melakukan kompilasi. Dalam kondisi ini, sangat disarankan untuk melakukan kompilasi secara lokal (VS Code/TeXstudio).*
 
