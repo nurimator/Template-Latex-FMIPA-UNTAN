@@ -1,7 +1,7 @@
 # Template LaTeX FMIPA UNTAN
 
-[![Download ZIP (Bahasa Indonesia)](https://img.shields.io/badge/Download-Versi%20Indonesia-blue?style=for-the-badge&logo=github)](https://github.com/nurimator/Template-Latex-FMIPA-UNTAN/releases/download/v1.0.0/LaTeX_FMIPA_UNTAN_ID.zip)
-[![Download ZIP (English Version)](https://img.shields.io/badge/Download-English%20Version-green?style=for-the-badge&logo=github)](https://github.com/nurimator/Template-Latex-FMIPA-UNTAN/releases/download/v1.0.0/LaTeX_FMIPA_UNTAN_EN.zip)
+[![Download ZIP (Bahasa Indonesia)](https://img.shields.io/badge/Download-Versi%20Indonesia-blue?style=for-the-badge&logo=github)](https://github.com/nurimator/Template-Latex-FMIPA-UNTAN/releases/download/v1.1.0/LaTeX_FMIPA_UNTAN_ID.zip)
+[![Download ZIP (English Version)](https://img.shields.io/badge/Download-English%20Version-green?style=for-the-badge&logo=github)](https://github.com/nurimator/Template-Latex-FMIPA-UNTAN/releases/download/v1.1.0/LaTeX_FMIPA_UNTAN_EN.zip)
 
 Halo! Template LaTeX **unofficial** ini saya buat sekadar untuk membantu teman-teman mahasiswa FMIPA UNTAN dalam menyusun tugas akhir (Skripsi) menggunakan LaTeX. Perlu diketahui bahwa saya hanya mahasiswa biasa yang mencoba mengonversi format dari Template Microsoft Word ke LaTeX, dan saya **bukan** bagian dari tenaga pendidik atau staf resmi kampus. (Selengkapnya silakan baca bagian [Disclaimer](#disclaimer-penafian)).
 
@@ -179,6 +179,7 @@ Gunakan ekstensi **LaTeX Workshop**. Cara termudah adalah menggunakan **tectonic
 *Catatan:*
 - *Sesuaikan path `"command"` dengan lokasi instalasi Tectonic di komputer Anda.*
 - *Pastikan `biber.exe` diletakkan di folder yang sama dengan `tectonic.exe` dan versinya harus kompatibel.*
+- *Saat ini template berjalan stabil pada **Tectonic v0.16.9** dan **Biber v2.17**. Anda bebas memakai versi/engine lain, namun versi ini direkomendasikan apabila Anda mengalami masalah kompatibilitas.*
 
 ### 3. Menggunakan TeXstudio
 Buka **Options** -> **Configure TeXstudio**:
