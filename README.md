@@ -1,4 +1,4 @@
-# Template LaTeX FMIPA UNTAN
+# Template LaTeX FMIPA UNTAN (unofficial)
 
 [![Download ZIP (Bahasa Indonesia)](https://img.shields.io/badge/Download-Versi%20Indonesia-blue?style=for-the-badge&logo=github)](https://github.com/nurimator/Template-Latex-FMIPA-UNTAN/releases/download/v1.1.0/LaTeX_FMIPA_UNTAN_ID.zip)
 [![Download ZIP (English Version)](https://img.shields.io/badge/Download-English%20Version-green?style=for-the-badge&logo=github)](https://github.com/nurimator/Template-Latex-FMIPA-UNTAN/releases/download/v1.1.0/LaTeX_FMIPA_UNTAN_EN.zip)
