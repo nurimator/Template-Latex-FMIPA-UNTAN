@@ -155,6 +155,9 @@
 % CUSTOM STYLE: Element separator is changed to a comma
 \renewcommand*{\newunitpunct}{\addcomma\space}
 
+% CUSTOM STYLE: Remove quotation marks from article titles (and similar entries)
+\DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished]{title}{#1}
+
 % CUSTOM STYLE: Removal of parentheses from the year
 \renewbibmacro*{date+extradate}{%
   \iffieldundef{labelyear}

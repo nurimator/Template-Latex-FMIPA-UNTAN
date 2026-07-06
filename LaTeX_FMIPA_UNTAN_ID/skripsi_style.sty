@@ -155,6 +155,9 @@
 % CUSTOM STYLE: Pemisah antar elemen diubah menjadi koma
 \renewcommand*{\newunitpunct}{\addcomma\space}
 
+% CUSTOM STYLE: Penghilangan tanda petik pada judul artikel
+\DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished]{title}{#1}
+
 % CUSTOM STYLE: Penghilangan tanda kurung pada tahun
 \renewbibmacro*{date+extradate}{%
   \iffieldundef{labelyear}
