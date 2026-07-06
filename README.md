@@ -1,7 +1,7 @@
 # Template LaTeX FMIPA UNTAN (unofficial)
 
-[![Download ZIP (Bahasa Indonesia)](https://img.shields.io/badge/Download-Versi%20Indonesia-blue?style=for-the-badge&logo=github)](https://github.com/nurimator/Template-Latex-FMIPA-UNTAN/releases/download/v1.1.0/LaTeX_FMIPA_UNTAN_ID.zip)
-[![Download ZIP (English Version)](https://img.shields.io/badge/Download-English%20Version-green?style=for-the-badge&logo=github)](https://github.com/nurimator/Template-Latex-FMIPA-UNTAN/releases/download/v1.1.0/LaTeX_FMIPA_UNTAN_EN.zip)
+[![Download ZIP (Bahasa Indonesia)](https://img.shields.io/badge/Download-Versi%20Indonesia-blue?style=for-the-badge&logo=github)](https://github.com/nurimator/Template-Latex-FMIPA-UNTAN/releases/download/v1.2.0/LaTeX_FMIPA_UNTAN_ID.zip)
+[![Download ZIP (English Version)](https://img.shields.io/badge/Download-English%20Version-green?style=for-the-badge&logo=github)](https://github.com/nurimator/Template-Latex-FMIPA-UNTAN/releases/download/v1.2.0/LaTeX_FMIPA_UNTAN_EN.zip)
 
 Halo! Template LaTeX **unofficial** ini saya buat sekadar untuk membantu teman-teman mahasiswa FMIPA UNTAN dalam menyusun tugas akhir (Skripsi) menggunakan LaTeX. Perlu diketahui bahwa saya hanya mahasiswa biasa yang mencoba mengonversi format dari Template Microsoft Word ke LaTeX, dan saya **bukan** bagian dari tenaga pendidik atau staf resmi kampus. (Selengkapnya silakan baca bagian [Disclaimer](#disclaimer-penafian)).
 
@@ -47,6 +47,60 @@ Untuk menggunakan template ini, Anda harus menggunakan:
 └── README.md
 ```
 
+
+## Cara Kompilasi
+
+### 1. Menggunakan Overleaf (Paling Mudah)
+Jika Anda tidak ingin menginstal LaTeX secara lokal, Anda bisa menggunakan layanan Overleaf:
+1. Lakukan registrasi di [Overleaf.com](https://www.overleaf.com/) kemudian login.
+2. Download template versi `.zip` melalui tautan di bagian atas halaman ini, atau _clone_ project ini kemudian _compress_ folder yang ingin digunakan ke dalam bentuk `.zip`.
+3. Buat project baru pada Overleaf dengan mengeklik tombol **"New Project"**, kemudian pilih **"Upload Project"**.
+4. Upload file `.zip` tersebut pada halaman yang disediakan.
+
+**Penting:** Setelah proyek terbuka, Anda harus mengubah engine compiler agar font *Times New Roman* dapat terbaca dengan benar:
+1. Klik tombol **Menu** di pojok kiri atas Overleaf.
+2. Pada bagian **Settings**, ubah **Compiler** menjadi `XeLaTeX`.
+3. Klik **Recompile**.
+
+*Catatan: Overleaf memiliki batasan waktu kompilasi (timeout), terutama untuk akun gratis. Jika proyek Anda sudah lumayan besar (banyak gambar atau bab), Overleaf mungkin akan menolak untuk melakukan kompilasi. Dalam kondisi ini, sangat disarankan untuk melakukan kompilasi secara lokal (VS Code/TeXstudio).*
+
+### 2. Menggunakan VS Code (LaTeX Workshop)
+Gunakan ekstensi **LaTeX Workshop**. Cara termudah adalah menggunakan **tectonic.exe**. Pastikan path executable tersebut sudah terdaftar dengan benar di `settings.json` VS Code Anda. Berikut adalah contoh konfigurasinya:
+
+```json
+{
+    "latex-workshop.latex.autoBuild.run": "never",
+    "latex-workshop.latex.tools": [
+        {
+            "name": "tectonic",
+            "command": "C:/path/to/your/tectonic.exe",
+            "args": [
+                "--synctex",
+                "%DOC%.tex"
+            ],
+            "env": {}
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "tectonic",
+            "tools": [
+                "tectonic"
+            ]
+        }
+    ]
+}
+```
+*Catatan:*
+- *Sesuaikan path `"command"` dengan lokasi instalasi Tectonic di komputer Anda.*
+- *Pastikan `biber.exe` diletakkan di folder yang sama dengan `tectonic.exe` dan versinya harus kompatibel.*
+- *Saat ini template berjalan stabil pada **Tectonic v0.16.9** dan **Biber v2.17**. Anda bebas memakai versi/engine lain, namun versi ini direkomendasikan apabila Anda mengalami masalah kompatibilitas.*
+- *Template ini hanya diuji pada **Windows**. Namun Tectonic dan Biber tersedia pula untuk **Linux** dan **macOS** — silakan sesuaikan command dan path-nya jika menggunakan OS tersebut.*
+
+### 3. Menggunakan TeXstudio
+Buka **Options** -> **Configure TeXstudio**:
+- **Build**: Default Compiler ganti ke `XeLaTeX`.
+- **Build**: Default Bibliography Tool ganti ke `Biber`.
 
 ## Cara Penggunaan Dasar
 
@@ -137,59 +191,6 @@ Data seperti Judul, Nama, dan NIM dapat diubah langsung pada file di folder `0-b
 - `cover.tex`
 - `judul.tex` (atau `title.tex`)
 - `pengesahan.tex` (atau `approval.tex`)
-
-## Cara Kompilasi
-
-### 1. Menggunakan Overleaf (Paling Mudah)
-Jika Anda tidak ingin menginstal LaTeX secara lokal, Anda bisa menggunakan layanan Overleaf:
-1. Lakukan registrasi di [Overleaf.com](https://www.overleaf.com/) kemudian login.
-2. Download template versi `.zip` melalui tautan di bagian atas halaman ini, atau _clone_ project ini kemudian _compress_ folder yang ingin digunakan ke dalam bentuk `.zip`.
-3. Buat project baru pada Overleaf dengan mengeklik tombol **"New Project"**, kemudian pilih **"Upload Project"**.
-4. Upload file `.zip` tersebut pada halaman yang disediakan.
-
-**Penting:** Setelah proyek terbuka, Anda harus mengubah engine compiler agar font *Times New Roman* dapat terbaca dengan benar:
-1. Klik tombol **Menu** di pojok kiri atas Overleaf.
-2. Pada bagian **Settings**, ubah **Compiler** menjadi `XeLaTeX`.
-3. Klik **Recompile**.
-
-*Catatan: Overleaf memiliki batasan waktu kompilasi (timeout), terutama untuk akun gratis. Jika proyek Anda sudah lumayan besar (banyak gambar atau bab), Overleaf mungkin akan menolak untuk melakukan kompilasi. Dalam kondisi ini, sangat disarankan untuk melakukan kompilasi secara lokal (VS Code/TeXstudio).*
-
-### 2. Menggunakan VS Code (LaTeX Workshop)
-Gunakan ekstensi **LaTeX Workshop**. Cara termudah adalah menggunakan **tectonic.exe**. Pastikan path executable tersebut sudah terdaftar dengan benar di `settings.json` VS Code Anda. Berikut adalah contoh konfigurasinya:
-
-```json
-{
-    "latex-workshop.latex.autoBuild.run": "never",
-    "latex-workshop.latex.tools": [
-        {
-            "name": "tectonic",
-            "command": "C:/path/to/your/tectonic.exe",
-            "args": [
-                "--synctex",
-                "%DOC%.tex"
-            ],
-            "env": {}
-        }
-    ],
-    "latex-workshop.latex.recipes": [
-        {
-            "name": "tectonic",
-            "tools": [
-                "tectonic"
-            ]
-        }
-    ]
-}
-```
-*Catatan:*
-- *Sesuaikan path `"command"` dengan lokasi instalasi Tectonic di komputer Anda.*
-- *Pastikan `biber.exe` diletakkan di folder yang sama dengan `tectonic.exe` dan versinya harus kompatibel.*
-- *Saat ini template berjalan stabil pada **Tectonic v0.16.9** dan **Biber v2.17**. Anda bebas memakai versi/engine lain, namun versi ini direkomendasikan apabila Anda mengalami masalah kompatibilitas.*
-
-### 3. Menggunakan TeXstudio
-Buka **Options** -> **Configure TeXstudio**:
-- **Build**: Default Compiler ganti ke `XeLaTeX`.
-- **Build**: Default Bibliography Tool ganti ke `Biber`.
 
 ---
 
