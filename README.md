@@ -53,7 +53,7 @@ Untuk menggunakan template ini, Anda harus menggunakan:
 ### 1. Menggunakan Overleaf (Paling Mudah)
 Jika Anda tidak ingin menginstal LaTeX secara lokal, Anda bisa menggunakan layanan Overleaf:
 1. Lakukan registrasi di [Overleaf.com](https://www.overleaf.com/) kemudian login.
-2. Download template versi `.zip` melalui tautan di bagian atas halaman ini, atau _clone_ project ini kemudian _compress_ folder yang ingin digunakan ke dalam bentuk `.zip`.
+2. Download template versi `.zip` melalui tautan di bagian atas halaman ini.
 3. Buat project baru pada Overleaf dengan mengeklik tombol **"New Project"**, kemudian pilih **"Upload Project"**.
 4. Upload file `.zip` tersebut pada halaman yang disediakan.
 
