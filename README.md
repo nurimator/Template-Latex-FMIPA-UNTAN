@@ -200,5 +200,6 @@ Data seperti Judul, Nama, dan NIM dapat diubah langsung pada file di folder `0-b
 - Sebagai sesama mahasiswa, saya berusaha semaksimal mungkin agar formatnya sesuai, namun template ini mungkin tidak selalu mutakhir karena aturan bisa berubah sewaktu-waktu.
 - Pengguna bertanggung jawab penuh untuk memeriksa kembali kesesuaian hasil akhir dengan aturan terbaru yang berlaku di program studi masing-masing.
 - Saya selaku yang melakukan konversi tidak bertanggung jawab atas kesalahan format atau kendala teknis (yang dapat menyebabkan kerugian waktu) yang muncul akibat penggunaan template ini.
+- **Peringatan:** Template ini dibuat dengan asumsi bahwa Anda sudah mengerti LaTeX atau merasa lebih nyaman menggunakan LaTeX dibandingkan Microsoft Word. Jika Anda belum pernah menggunakan atau tidak mengerti cara kerja LaTeX, **sangat disarankan untuk tidak memakai template ini**. Lebih baik gunakan saja cara resmi menggunakan Microsoft Word agar pengerjaan skripsi Anda tidak terhambat dan cepat selesai.
 
 **Kontribusi:** Jika Anda menemukan kesalahan, silakan buka **Issue**. Selain itu, jika Anda ingin memperbaiki sendiri atau memperbarui format sesuai aturan terbaru, silakan lakukan **pull request**. Bantuan Anda sangat berarti bagi teman-teman mahasiswa lainnya!
