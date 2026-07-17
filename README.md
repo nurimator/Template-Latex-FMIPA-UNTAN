@@ -94,7 +94,7 @@ Gunakan ekstensi **LaTeX Workshop**. Cara termudah adalah menggunakan **tectonic
 *Catatan:*
 - *Sesuaikan path `"command"` dengan lokasi instalasi Tectonic di komputer Anda.*
 - *Pastikan `biber.exe` diletakkan di folder yang sama dengan `tectonic.exe` dan versinya harus kompatibel.*
-- *Saat ini template berjalan stabil pada **Tectonic v0.16.9** dan **Biber v2.17**. Anda bebas memakai versi/engine lain, namun versi ini direkomendasikan apabila Anda mengalami masalah kompatibilitas.*
+- *Saat ini template berjalan stabil pada **[Tectonic v0.16.9 (MSVC)](https://github.com/tectonic-typesetting/tectonic/releases#release-tectonic@0.16.9)** dan **[Biber v2.17](https://sourceforge.net/projects/biblatex-biber/files/biblatex-biber/2.17/binaries/)**. Anda bebas memakai versi/engine lain, namun versi ini direkomendasikan apabila Anda mengalami masalah kompatibilitas.*
 - *Template ini hanya diuji pada **Windows**. Namun Tectonic dan Biber tersedia pula untuk **Linux** dan **macOS** — silakan sesuaikan command dan path-nya jika menggunakan OS tersebut.*
 
 ### 3. Menggunakan TeXstudio
